@@ -1,0 +1,57 @@
+#!/bin/bash
+
+
+# Color For Results //
+
+Yellow=`tput bold && tput setaf 3`
+answer=3
+function Yellow(){
+         echo -e "\n${Yellow}${1}${NC}"
+}
+
+###################################################################
+
+# Author | Adkali With Love //                                         #
+
+# Version | 1.0 Base64 Decode & Encode //                              #
+
+# Simple Shell, Have Fun //                                            #
+
+####################################################################
+
+echo '# Made By Adkali'
+           sleep 0.5
+echo '# This Is a Normal Base64 Encoder & Decoder script, Use Base64 syntax only!' && echo
+            sleep 0.5
+
+# Text To Encode/Decode //
+
+while  [ $answer == 3 ]; do
+
+echo "Enter 1 For Encoding || 2 For Decoding"
+read answer
+
+if [ $answer == 1 ];
+then
+echo 'Enter base64 text to encode:'
+read input_text
+output_text=`echo -n $input_text | base64`
+Yellow 'The Encoded Text Is:'$output_text
+
+else
+if [ $answer == 2 ];
+then
+echo 'Enter base64 text to decode:'
+read input_text
+output_text=`echo -n $input_text | base64 -d` 
+Yellow 'The Decoded Text Is:'$output_text
+
+else
+echo "Read Again!"
+answer=3
+
+        fi
+
+    fi
+
+done
